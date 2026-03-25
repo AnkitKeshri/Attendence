@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offline Hybrid Attendance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Offline Hybrid Attendance System</h1>
+
+    <section class="card">
+      <h2>Student Registration</h2>
+      <form id="studentForm">
+        <input id="studentId" type="text" placeholder="Student ID" required />
+        <input id="studentName" type="text" placeholder="Student Name" required />
+        <button type="submit">Generate QR</button>
+      </form>
+      <p id="registrationMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Attendance Scanner</h2>
+      <div class="video-wrap">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+      </div>
+      <div class="actions">
+        <button id="startCameraBtn">Start Camera</button>
+        <button id="stopCameraBtn" class="secondary">Stop Camera</button>
+        <button id="markAttendanceBtn">Mark Attendance</button>
+      </div>
+      <div class="status-grid">
+        <span id="qrStatus" class="badge idle">QR: Waiting</span>
+        <span id="faceStatus" class="badge idle">Face: Waiting</span>
+        <span id="attendanceStatus" class="badge idle">Attendance: Pending</span>
+      </div>
+      <p id="systemMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Today Attendance</h2>
+      <button id="refreshAttendanceBtn" class="secondary">Refresh List</button>
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

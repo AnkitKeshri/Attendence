@@ -1,0 +1,106 @@
+:root {
+  --bg: #f3f5fb;
+  --card: #ffffff;
+  --text: #152238;
+  --accent: #2f6dfc;
+  --ok: #0a8f3f;
+  --warn: #cb7a00;
+  --danger: #b00020;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1050px;
+  margin: 20px auto;
+  padding: 0 16px 30px;
+}
+
+h1 { text-align: center; }
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input, button {
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button.secondary { background: #6f7f98; }
+
+.video-wrap {
+  position: relative;
+  width: min(100%, 720px);
+  margin-bottom: 10px;
+}
+
+video, canvas {
+  width: 100%;
+  border-radius: 10px;
+  background: #0f1724;
+}
+
+#overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.status-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.badge.idle { background: #e4e8f3; color: #4e5f7d; }
+.badge.ok { background: #d6f4e2; color: var(--ok); }
+.badge.warn { background: #fbe9d0; color: var(--warn); }
+.badge.error { background: #f8d6dc; color: var(--danger); }
+
+.message { min-height: 18px; }
+
+#attendanceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+#attendanceTable th, #attendanceTable td {
+  border: 1px solid #dce2ee;
+  text-align: left;
+  padding: 8px;
+}

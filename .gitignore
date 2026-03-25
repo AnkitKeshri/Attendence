@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+database/attendance.db
+database/qr_codes/
+logs/*.log
